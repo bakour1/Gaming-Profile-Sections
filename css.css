@@ -242,7 +242,7 @@ section.trophies .images {
 section.trophies .images>img {
   width: 100%;
 }
-section.trophies .images>img .opac {
+section.trophies .images>img.opac {
   opacity: 0.2;
 }
 
