@@ -1,0 +1,276 @@
+/* . . . . ROOT . . . .  */
+:root {
+  --background-color-body: #F5F5F5;
+  --background-color-section: #FFFFFF;
+  --background-border: #ddd;
+  --background-border-section: #eee;
+  --background-title-section: #607D8B;
+  --text-color-main: #000000;
+  --color-text: #777;
+  --color-red: #E91E63;
+  --color-green-prog: #009688;
+  --color-green-span: #008000;
+  --color-blue: #2196F3;
+}
+
+/* . . . . global selector . . . .  */
+* {
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-color: var(--background-color-body);
+  font-family: "Work Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: var(--background-title-section);
+  color: var(--background-color-section);
+  width: fit-content;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+
+li {
+  color: var(--color-text);
+  font-size: 20px;
+  padding-block: 15px;
+  margin: 5px;
+}
+
+li:not(:last-of-type) {
+  border-bottom: 1px solid var(--background-border);
+}
+
+strong {
+  color: var(--color-green-prog);
+  margin-right: 6px;
+}
+
+/* . . . . responsive container . . . .  */
+.container {
+  padding: 20px;
+  background-color: var(--background-color-section);
+  margin: 20px auto 40px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1280px) {
+  .container {
+    width: 1270px;
+  }
+}
+
+/* . . . . HEADER . . . .  */
+header .container,
+section .container {
+  position: relative;
+}
+
+header .container::after,
+section .container::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: var(--background-border-section);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+
+}
+
+header .container {
+  min-height: 350px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header .container .logo {
+  width: 300px;
+  padding: 0 20px;
+  text-align: center;
+  margin-left: -15px;
+  border-right: 2px solid var(--background-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media (max-width: 767px) {
+  header .container {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  header .container .logo {
+    border-right: none;
+  }
+}
+
+header .container .logo figure {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+header .container .logo figure::before,
+header .container .logo figure::after {
+  content: '';
+  height: 24px;
+  position: absolute;
+  left: 0;
+  bottom: 14px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+header .container .logo figure::before {
+  background-color: var(--background-color-body);
+  width: 100%;
+}
+
+header .container .logo figure::after {
+  background-color: var(--color-green-prog);
+  width: 75%;
+}
+
+header .container .logo figure img {
+  border: 6px solid var(--background-color-body);
+  border-radius: 50%;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+header .container .logo figcaption {
+  width: 100%;
+}
+
+header .container .logo figcaption p {
+  color: var(--text-color-main);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+header .container .logo>p {
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+
+
+header .container .text {
+  flex: 1;
+  padding: 0 20px;
+  position: relative;
+}
+
+header .container .text h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+header .container .text p:first-of-type {
+  color: var(--color-text);
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 70px;
+}
+
+header .container p.date {
+  font-size: 22px;
+  color: var(--color-text);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+/* . . . . POINTS LOG . . . .  */
+
+section.points .container li .log {
+  color: var(--color-red);
+}
+
+/* . . . . TROPHIES . . . .  */
+section.trophies .images {
+  min-height: 205px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 4px;
+}
+
+section.trophies .images>img {
+  width: 100%;
+
+}
+
+/* . . . . LADDER NEWS. . . .  */
+section.news p {
+  color: var(--color-text);
+  font-size: 26px;
+}
+
+section.news p strong.from {
+  color: var(--color-red);
+}
+
+section.news p strong.to {
+  color: var(--color-blue);
+}
+
+/* . . . . YOUR POWERS . . . .  */
+section.powers ul li {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+section.powers ul li span.yes {
+  color: var(--color-green-span);
+  font-weight: bold;
+}
+
+section.powers ul li span.no {
+  color: var(--color-red);
+  font-weight: bold;
+}
